@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:delivery15/scr/help.dart';
 import 'package:flutter_verification_code/flutter_verification_code.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
+// import 'package:pin_code_fields/pin_code_fields.dart';
 
 class forgetPassCode extends StatefulWidget {
   const forgetPassCode({Key? key}) : super(key: key);
@@ -20,7 +20,6 @@ class _forgetPassCodeState extends State<forgetPassCode> {
   String descrpt2 = "Please fill in the following";
   String descrpt3 = "Write code that sent to your number";
   Color upBgCl = Color(0xfff5a831);
-  Color upBrCl = Color(0xffeb1b2f);
   Color pinUnderLineCl = Color(0xff115056);
 
   //class
@@ -63,8 +62,6 @@ class _forgetPassCodeState extends State<forgetPassCode> {
               padding: EdgeInsets.only(left: 25,right: 25, bottom: 10),
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border.all(
-                  ),
                   borderRadius: BorderRadius.all(Radius.circular(50))),
               child: VerificationCode(
                   textStyle: TextStyle(fontSize: 20.0, color: Colors.black),
@@ -91,7 +88,7 @@ class _forgetPassCodeState extends State<forgetPassCode> {
             Padding(
               padding: const EdgeInsets.only(left: 40, right: 40),
               child: help.buttonWithBorder("CONFIRM", Colors.white, () {},
-                  upBgCl, upBrCl, Size(300, 45)),
+                  upBgCl, upBgCl, Size(300, 45)),
             )
           ],
         ),

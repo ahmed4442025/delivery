@@ -25,7 +25,6 @@ class _registerScrState extends State<registerScr> {
   String descrpt =
       "Lorem Ipsum is simply dummy text of the\n printing and typesetting industry.";
   Color upBgCl = Color(0xfff5a831);
-  Color upBrCl = Color(0xffeb1b2f);
 
   //class
   helpDis help = new helpDis();
@@ -69,7 +68,7 @@ class _registerScrState extends State<registerScr> {
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 50,right: 50),
-          child: help.buttonWithBorder("REGISTER", Colors.white, () { }, upBgCl, upBrCl, Size(300, 50)),
+          child: help.buttonWithBorder("REGISTER", Colors.white, () { }, upBgCl, upBgCl, Size(300, 50)),
         )
       ],
     ),

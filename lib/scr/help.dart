@@ -14,12 +14,13 @@ class helpDis {
 
   //TextButton
   OutlinedButton buttonWithBorder(String txt, Color txtClr, void function(),
-      Color bgClr, Color brderClr, Size sizee) {
+      Color bgClr, Color brderClr, Size sizee,
+      {bool border = false}) {
     return OutlinedButton(
         style: OutlinedButton.styleFrom(
           fixedSize: sizee,
           backgroundColor: bgClr,
-          side: BorderSide(width: .7, color: brderClr),
+          side: BorderSide(width: border ? .8 : 0.01, color: brderClr),
         ),
         onPressed: function,
         child: Text(
@@ -30,11 +31,12 @@ class helpDis {
 
   //TextButton
   OutlinedButton buttonWithBorderNosize(
-      String txt, Color txtClr, void function(), Color bgClr, Color brderClr) {
+      String txt, Color txtClr, void function(), Color bgClr, Color brderClr,
+      {bool border = false}) {
     return OutlinedButton(
         style: OutlinedButton.styleFrom(
           backgroundColor: bgClr,
-          side: BorderSide(width: .8, color: brderClr),
+          side: BorderSide(width: border ? .8 : .01, color: brderClr),
         ),
         onPressed: function,
         child: Text(
@@ -77,5 +79,4 @@ class helpDis {
   Container spaces({double hight: 20}) => Container(
         height: hight,
       );
-
 }

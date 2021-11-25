@@ -19,7 +19,6 @@ class _forgetPasswordState extends State<newPassword> {
   String descrpt1 = "Forget password !";
   String descrpt2 = "Please fill in the following";
   Color upBgCl = Color(0xfff5a831);
-  Color upBrCl = Color(0xffeb1b2f);
 
   //class
   helpDis help = new helpDis();
@@ -63,7 +62,7 @@ class _forgetPasswordState extends State<newPassword> {
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 40,right: 40),
-          child: help.buttonWithBorder("CONFIRM", Colors.white, () { }, upBgCl, upBrCl, Size(300, 45)),
+          child: help.buttonWithBorder("CONFIRM", Colors.white, () { }, upBgCl, upBgCl, Size(300, 45)),
         )
       ],
     ),

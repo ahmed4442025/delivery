@@ -1,5 +1,4 @@
 import 'package:delivery15/scr/help.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class homeScr extends StatefulWidget {
@@ -34,9 +33,9 @@ class _homeScrState extends State<homeScr> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           help.buttonWithBorder(
-              'English', white, () {}, enBgCol, enBrCol, enSiz),
+              'English', white, () {}, enBgCol, enBrCol, enSiz, border: true),
           help.buttonWithBorder(
-              'عربي', arTxtCol, () {},white, enBgCol, enSiz),
+              'عربي', arTxtCol, () {},white, enBgCol, enSiz, border: true),
         ],
       );
   // language and sign up
@@ -59,15 +58,13 @@ class _homeScrState extends State<homeScr> {
         decoration: help.background(bg1Path, 1),
         child: Container(
           decoration: help.background(bg2Path, .5),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                help.spaces(),
-                Image.asset(logoPath),
-                help.spaces(hight: 35),
-                langAndSignup()],
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              help.spaces(),
+              Image.asset(logoPath),
+              help.spaces(hight: 35),
+              langAndSignup()],
           ),
         ),
       );
