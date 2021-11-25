@@ -73,36 +73,9 @@ class helpDis {
         ),
       );
 
-  //temp
-  MaterialButton testbutton(
-      String txt, Color txtClr, void function(), Color bgClr, Color brderClr) {
-    return MaterialButton(
-      onPressed: function,
-      color: bgClr,
-      child: Text(
-        txt,
-        style: TextStyle(color: txtClr, fontSize: 20),
-      ),
-    );
-  }
-
-  // ^^^^^^ temp ^^^^^^
-
   //spaces
   Container spaces({double hight: 20}) => Container(
         height: hight,
       );
 
-  Container test(bool bord) {
-    if (bord) {
-      return Container(
-        decoration: BoxDecoration(
-            border: Border.all(
-          color: Colors.blueAccent,
-          width: bord ? 0 : 1,
-        )),
-      );
-    }
-    return Container();
-  }
 }
