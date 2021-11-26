@@ -48,7 +48,7 @@ class helpDis {
   //-------------
   //textEdit with icon
   TextField textEditWithIcon(
-          String icoName, TextEditingController controll, String hint,
+          IconData ico, TextEditingController controll, String hint,
           {bool password = false}) =>
       TextField(
         obscureText: password,
@@ -58,10 +58,9 @@ class helpDis {
         controller: controll,
         decoration: InputDecoration(
           prefixIcon: Padding(
-              padding: const EdgeInsets.only(top: 0),
-              child: Image.asset(
-                'images/icons/$icoName.png',
-              )),
+            padding: const EdgeInsets.only(top: 0),
+            child: Icon(ico),
+          ),
           hintText: hint,
           hintStyle: TextStyle(color: Color(0xff606060)),
           isDense: true,
@@ -77,6 +76,11 @@ class helpDis {
 
   //spaces
   Container spaces({double hight: 20}) => Container(
+        height: hight,
+      );
+
+  //spaces
+  spaces2({double hight: 20}) => Container(
         height: hight,
       );
 }

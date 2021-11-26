@@ -54,8 +54,8 @@ class _loginScrState extends State<loginScr> {
             borderRadius: BorderRadius.all(Radius.circular(25))),
         child: Column(
           children: [
-            help.textEditWithIcon('date', username, "USERNANE"),
-            help.textEditWithIcon('date', password, "****", password: true)
+            help.textEditWithIcon(Icons.call, username, "USERNANE"),
+            help.textEditWithIcon(Icons.call, password, "****", password: true)
           ],
         ),
       );

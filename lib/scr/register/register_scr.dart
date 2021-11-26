@@ -49,13 +49,13 @@ class _registerScrState extends State<registerScr> {
         padding: EdgeInsets.only(left: 20, right: 20),
         child: Column(
           children: [
-            help.textEditWithIcon('person',fullName, 'User name'),
-            help.textEditWithIcon("phone",phoneNumber, '0123456789'),
-            help.textEditWithIcon("id",idCardNumber, 'identity'),
-            help.textEditWithIcon("email",email, 'email@examble.com'),
-            help.textEditWithIcon("date",birthDate, 'Date of Birth'),
-            help.textEditWithIcon("location",location, 'Address place'),
-            help.textEditWithIcon("lock",password, '****', password: true),
+            help.textEditWithIcon(Icons.person_outline_sharp,fullName, 'User name'),
+            help.textEditWithIcon(Icons.call,phoneNumber, '0123456789'),
+            help.textEditWithIcon(Icons.call,idCardNumber, 'identity'),
+            help.textEditWithIcon(Icons.email_outlined,email, 'email@examble.com'),
+            help.textEditWithIcon(Icons.call,birthDate, 'Date of Birth'),
+            help.textEditWithIcon(Icons.call,location, 'Address place'),
+            help.textEditWithIcon(Icons.call,password, '****', password: true),
 
           ],
         ),

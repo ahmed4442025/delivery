@@ -47,8 +47,8 @@ class _forgetPasswordState extends State<newPassword> {
     padding: EdgeInsets.only(left: 20, right: 20),
     child: Column(
       children: [
-        help.textEditWithIcon('phone',pass1, '0123456789', password: true),
-        help.textEditWithIcon("phone",pass2, 'identity', password: true),
+        help.textEditWithIcon(Icons.call,pass1, '0123456789', password: true),
+        help.textEditWithIcon(Icons.call,pass2, 'identity', password: true),
         help.spaces(hight: 70),
         confirmButton()
       ],
