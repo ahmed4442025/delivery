@@ -18,13 +18,18 @@ class _registerScrState extends State<registerScr> {
   TextEditingController location = TextEditingController();
   TextEditingController password = TextEditingController();
 
-
   //vars
   String bg1Path = "images/bg/bg register.png";
   String logoPath = "images/other/logod.png";
   String descrpt =
       "Lorem Ipsum is simply dummy text of the\n printing and typesetting industry.";
-  Color upBgCl = Color(0xfff5a831);
+
+  Map<String, dynamic> bActive = {
+    'colorBg': Color(0x44f5a831),
+    'colorFont': Color(0xff115056),
+    'enable': false
+  };
+  bool isSubmitEnabled = false;
 
   //class
   helpDis help = new helpDis();
@@ -49,30 +54,40 @@ class _registerScrState extends State<registerScr> {
         padding: EdgeInsets.only(left: 20, right: 20),
         child: Column(
           children: [
-            help.textEditWithIcon(Icons.person_outline_sharp,fullName, 'User name'),
-            help.textEditWithIcon(Icons.call,phoneNumber, '0123456789'),
-            help.textEditWithIcon(Icons.call,idCardNumber, 'identity'),
-            help.textEditWithIcon(Icons.email_outlined,email, 'email@examble.com'),
-            help.textEditWithIcon(Icons.call,birthDate, 'Date of Birth'),
-            help.textEditWithIcon(Icons.call,location, 'Address place'),
-            help.textEditWithIcon(Icons.call,password, '****', password: true),
-
+            help.textEditWithIcon(
+                Icons.person_outline_sharp, fullName, 'User name',
+                onChang: checkAllNotEmpity),
+            help.textEditWithIcon(Icons.call, phoneNumber, '0123456789',
+                onChang: checkAllNotEmpity),
+            help.textEditWithIcon(Icons.call, idCardNumber, 'identity',
+                onChang: checkAllNotEmpity),
+            help.textEditWithIcon(
+                Icons.email_outlined, email, 'email@examble.com',
+                onChang: checkAllNotEmpity),
+            help.textEditWithIcon(Icons.call, birthDate, 'Date of Birth',
+                onChang: checkAllNotEmpity),
+            help.textEditWithIcon(Icons.call, location, 'Address place',
+                onChang: checkAllNotEmpity),
+            help.textEditWithIcon(Icons.call, password, '****',
+                password: true, onChang: checkAllNotEmpity),
           ],
         ),
       );
 
   // register Button
-  Container registerButton()=>Container(
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 50,right: 50),
-          child: help.buttonWithBorder("REGISTER", Colors.white, () { }, upBgCl, upBgCl, Size(300, 50)),
-        )
-      ],
-    ),
-  );
+  Container registerButton() => Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 50, right: 50),
+              child: help.buttonWithBorder("REGISTER", bActive['colorFont'],
+                  () {}, bActive['colorBg'], bActive['colorBg'], Size(300, 50),
+                  enable: bActive['enable']),
+            )
+          ],
+        ),
+      );
 
   //main Container
   Container mainContainer() => Container(
@@ -87,7 +102,7 @@ class _registerScrState extends State<registerScr> {
               help.spaces(),
               registerFields(),
               help.spaces(hight: 50),
-             registerButton(),
+              registerButton(),
               help.spaces()
             ],
           ),
@@ -100,5 +115,41 @@ class _registerScrState extends State<registerScr> {
       // resizeToAvoidBottomInset: false,
       body: mainContainer(),
     );
+  }
+
+  // all values is ok
+  checkAllNotEmpity(String value) {
+    bool empty = true;
+    if (fullName.text != '' &&
+        fullName.text != '' &&
+        phoneNumber.text != '' &&
+        idCardNumber.text != '' &&
+        email.text != '' &&
+        birthDate.text != '' &&
+        location.text != '' &&
+        password.text != '') empty = false;
+    Map<String, dynamic> bActiveTrue = {
+      'colorBg': Color(0xfff5a831),
+      'colorFont': Colors.white,
+      'enable': true
+    };
+
+    Map<String, dynamic> bActiveFalse = {
+      'colorBg': Color(0x44f5a831),
+      'colorFont': Color(0xff115056),
+      'enable': false
+    };
+
+    if (empty && isSubmitEnabled) {
+      setState(() {
+        bActive = bActiveFalse;
+        isSubmitEnabled = false;
+      });
+    } else if (!empty && !isSubmitEnabled) {
+      setState(() {
+        bActive = bActiveTrue;
+        isSubmitEnabled = true;
+      });
+    }
   }
 }

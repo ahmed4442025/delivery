@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       //home scr class
-      home: loginScr(),
+      home: registerScr(),
     );
   }
 }

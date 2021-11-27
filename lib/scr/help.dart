@@ -15,14 +15,14 @@ class helpDis {
   //TextButton
   OutlinedButton buttonWithBorder(String txt, Color txtClr, void function(),
       Color bgClr, Color brderClr, Size sizee,
-      {bool border = false}) {
+      {bool border = false, bool enable = true}) {
     return OutlinedButton(
         style: OutlinedButton.styleFrom(
           fixedSize: sizee,
           backgroundColor: bgClr,
           side: BorderSide(width: border ? .8 : 0.01, color: brderClr),
         ),
-        onPressed: function,
+        onPressed: enable ? function : null,
         child: Text(
           txt,
           style: TextStyle(color: txtClr, fontSize: 20),
@@ -49,11 +49,12 @@ class helpDis {
   //textEdit with icon
   TextField textEditWithIcon(
           IconData ico, TextEditingController controll, String hint,
-          {bool password = false}) =>
+          {bool password = false, Function(String value)? onChang}) =>
       TextField(
         obscureText: password,
         enableSuggestions: !password,
         autocorrect: !password,
+        onChanged: onChang ?? (s) {},
         style: TextStyle(color: Colors.white),
         controller: controll,
         decoration: InputDecoration(
@@ -75,12 +76,7 @@ class helpDis {
       );
 
   //spaces
-  Container spaces({double hight: 20}) => Container(
-        height: hight,
-      );
-
-  //spaces
-  spaces2({double hight: 20}) => Container(
+  Widget spaces({double hight: 20}) => Container(
         height: hight,
       );
 }
