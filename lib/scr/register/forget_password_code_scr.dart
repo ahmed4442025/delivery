@@ -60,7 +60,7 @@ class _forgetPassCodeState extends State<forgetPassCode> {
             help.spaces(),
             Container(
               padding: EdgeInsets.only(left: 25,right: 25, bottom: 10),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(50))),
               child: VerificationCode(

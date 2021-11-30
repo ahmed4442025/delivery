@@ -4,7 +4,7 @@ class helpDis {
   //background
   BoxDecoration background(String imgPath, double opacity) {
     return BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30)),
         image: DecorationImage(
             image: AssetImage(imgPath),
             fit: BoxFit.cover,

@@ -68,7 +68,7 @@ class _registerScrState extends State<registerScr> {
                 onChang: checkAllNotEmpity),
             help.textEditWithIcon(Icons.call, location, 'Address place',
                 onChang: checkAllNotEmpity),
-            help.textEditWithIcon(Icons.call, password, '****',
+            help.textEditWithIcon(Icons.lock, password, '****',
                 password: true, onChang: checkAllNotEmpity),
           ],
         ),
@@ -81,9 +81,12 @@ class _registerScrState extends State<registerScr> {
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 50, right: 50),
-              child: help.buttonWithBorder("REGISTER", bActive['colorFont'],
-                  () {}, bActive['colorBg'], bActive['colorBg'], Size(300, 50),
-                  enable: bActive['enable']),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: help.buttonWithBorder("REGISTER", bActive['colorFont'],
+                    () {}, bActive['colorBg'], bActive['colorBg'], Size(300, 50),
+                    enable: bActive['enable']),
+              ),
             )
           ],
         ),

@@ -4,6 +4,8 @@ import 'package:delivery15/scr/register/home_scr.dart';
 import 'package:delivery15/scr/register/login.dart';
 import 'package:delivery15/scr/register/new_password.dart';
 import 'package:delivery15/scr/register/register_scr.dart';
+import 'package:delivery15/scr/track_and_tasks/cotact_us.dart';
+import 'package:delivery15/scr/track_and_tasks/test_path.dart';
 import 'package:flutter/material.dart';
 
 
@@ -22,7 +24,7 @@ class _HomeState extends State<Home> {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       //home scr class
-      home: registerScr(),
+      home: contactUs(),
     );
   }
 }
